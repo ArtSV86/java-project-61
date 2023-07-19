@@ -3,38 +3,43 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        while (true) {
-            printMenu();
-            int command = scanner.nextInt();
 
-            if (command == 1) {
+        Scanner scanner = new Scanner(System.in);
+        printMenu();
+        int command = scanner.nextInt();
+        System.out.println("Your choice: " + command);
+        switch (command) {
+            case 1:
                 Cli.greet();
+            case 2:
+                //GameParityCheck.gameEven();
+                Engine.game("GameParityCheck.gameEven");
                 break;
-            } else if (command == 2) {
-                GameParityCheck.gameEven();
+            case 3:
+                //Calculator.gameCalc();
+                Engine.game("Calculator.gameCalc");
                 break;
-            } else if (command == 3) {
-                Calculator.gameCalc();
+            case 4:
+               // GreatestCommonDivisor.GCD();
+                Engine.game("GreatestCommonDivisor.GCD");
                 break;
-            } else if (command == 4) {
-                GreatestCommonDivisor.GCD();
+            case 5:
+               // ArithmeticProgression.progression();
+                Engine.game("ArithmeticProgression.progression");
                 break;
-            } else if (command == 5) {
-                ArithmeticProgression.progression();
+            case 6:
+               // PrimeNumber.prime();
+                Engine.game("PrimeNumber.prime");
                 break;
-            } else if (command == 6) {
-                PrimeNumber.prime();
-                break;
-            } else if (command == 0) {
+            case 0:
                 System.out.println("Exit");
                 break;
-            } else {
-                System.out.println("Sorry, there is no such command.");
+            default:
+                System.out.println("There's no such game!");
                 break;
-            }
         }
     }
+
         public static void printMenu() {
 
             System.out.println("Please enter the game number and press Enter.");

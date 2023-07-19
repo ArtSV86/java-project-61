@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class ArithmeticProgression {
 
     public static void progression() {
+
         int[] massive = new int[10];
         int answer;
         int counter = 0;
