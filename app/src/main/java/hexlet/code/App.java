@@ -1,7 +1,15 @@
 package hexlet.code;
 import java.util.Scanner;
+import hexlet.code.games.Calculator;
+import hexlet.code.games.ArithmeticProgression;
+import hexlet.code.games.GameParityCheck;
+import hexlet.code.games.GreatestCommonDivisor;
+import hexlet.code.games.PrimeNumber;
+
+
 
 public class App {
+
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -11,25 +19,21 @@ public class App {
         switch (command) {
             case 1:
                 Cli.greet();
+                break;
             case 2:
-                //GameParityCheck.gameEven();
-                Engine.game("GameParityCheck.gameEven");
+                GameParityCheck.gameEven();
                 break;
             case 3:
-                //Calculator.gameCalc();
-                Engine.game("Calculator.gameCalc");
+                Calculator.gameCalc();
                 break;
             case 4:
-               // GreatestCommonDivisor.GCD();
-                Engine.game("GreatestCommonDivisor.GCD");
+                GreatestCommonDivisor.GCD();
                 break;
             case 5:
-               // ArithmeticProgression.progression();
-                Engine.game("ArithmeticProgression.progression");
+                ArithmeticProgression.progression();
                 break;
             case 6:
-               // PrimeNumber.prime();
-                Engine.game("PrimeNumber.prime");
+                PrimeNumber.prime();
                 break;
             case 0:
                 System.out.println("Exit");

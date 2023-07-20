@@ -1,8 +1,8 @@
-package hexlet.code;
-
+package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
-
+import hexlet.code.Engine;
+import hexlet.code.Utils;
 public class PrimeNumber {
     public static void prime() {
         String answer;

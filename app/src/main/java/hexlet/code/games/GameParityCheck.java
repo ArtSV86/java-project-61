@@ -1,6 +1,8 @@
-package hexlet.code;
+package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
+import hexlet.code.Engine;
+import hexlet.code.Utils;
 public class GameParityCheck {
 
     public static void gameEven() {

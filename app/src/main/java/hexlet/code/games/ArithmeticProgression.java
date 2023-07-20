@@ -1,8 +1,9 @@
-package hexlet.code;
+package hexlet.code.games;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
-
+import hexlet.code.Engine;
+import hexlet.code.Utils;
 public class ArithmeticProgression {
 
     public static void progression() {
