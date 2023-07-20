@@ -1,51 +1,32 @@
 package hexlet.code.games;
 import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 public class ArithmeticProgression {
-
+    public static final String TASK = "What number is missing in the progression?";
     public static void progression() {
 
         int[] massive = new int[10];
-        int answer;
-        int counter = 0;
-        Random random = new Random();
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name?");
-        String name = scanner.nextLine();
-        System.out.println("Hello, " + name + "!");
-        System.out.println("What number is missing in the progression?");
-        do {
-            int step = random.nextInt(10);
-            int randomNumber = random.nextInt(10);
-            massive[0] = random.nextInt(20);
-            for (int i = 1; i < massive.length; i++) {
-                massive[i] = massive[0] + i * step;
-            }
+        int result;
+        String[][] data = new String[3][2];
+        for (int i = 0; i < 3; i++) {
 
+            int step = Utils.generateRandomNumber(10);
+            int randomNumber = Utils.generateRandomNumber(10);
+            massive[0] = Utils.generateRandomNumber(20);
+            for (int j = 1; j < massive.length; j++) {
+                massive[j] = massive[0] + j * step;
+            }
             String str = Arrays.toString(massive).replaceAll("\\[|]| ", "");
             var words = str.split(",");
             words[randomNumber] = "..";
             String newStr = String.join(",", words);
-            String text = newStr.replace (',', ' ');
-            System.out.println("Question: " + text);
-            System.out.println("Your answer: " + (answer = scanner.nextInt()));
-            int result =  massive[randomNumber];
-            if (answer == result) {
-                System.out.println("Correct!");
-                counter++;
-            } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + result + "'.");
-                System.out.println("Let's try again, " + name + "!");
-                break;
-            }
-
-        } while (counter < 3) ;
-        if (counter == 3) {
-            System.out.println("Congratulations, " + name + "!");
+            String question = newStr.replace (',', ' ');
+        data[i][0] = question;
+        result =  massive[randomNumber];
+        data[i][1] = Integer.toString(result);
         }
+        Engine.start(data, TASK);
     }
 }
+

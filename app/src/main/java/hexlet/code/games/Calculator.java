@@ -1,14 +1,12 @@
 package hexlet.code.games;
-import java.util.Random;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 public class Calculator {
     public static final String TASK = "What is the result of the expression?";
 
     private static String generateOperator() {
-        Random random = new Random();
         String[] operators = {"+", "-", "*"};
-        int i = random.nextInt(3);
+        int i = Utils.generateRandomNumber(3);
         return operators[i];
     }
     public static int calculate(int number1, int number2, String operator) {
@@ -31,7 +29,7 @@ public class Calculator {
     }
     public static void gameCalc() {
         int result;
-        String[][] data = new String[2][1];
+        String[][] data = new String[3][2];
            for (int i = 0; i < 3; i++) {
                 int number1 = Utils.generateRandomNumber(100);
                 int number2 = Utils.generateRandomNumber(100);
