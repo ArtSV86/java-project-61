@@ -21,22 +21,21 @@ public class Calculator {
         switch (operator) {
             case "+":
                 result = number1 + number2;
-                break;
+                return result;
             case "-":
                 result = number1 - number2;
-                break;
+                return result;
             case "*":
                 result = number1 * number2;
-                break;
+                return result;
             default:
                 System.out.println("There's no such operation");
         }
-
         return result;
+
     }
 
-    public static void gameCalc() {
-        int result;
+    public static void runCalc() {
         String[][] data = new String[ROUNDS_NUMBER][QUESTION_ANSWER];
         for (int i = 0; i < ROUNDS_NUMBER; i++) {
             int number1 = Utils.generateRandomNumber(UPPER_BOUND);
@@ -44,7 +43,7 @@ public class Calculator {
             String operator = generateOperator();
             String question = number1 + " " + operator + " " + number2;
             data[i][0] = question;
-            result = calculate(number1, number2, operator);
+            int result = calculate(number1, number2, operator);
             data[i][1] = Integer.toString(result);
         }
         Engine.start(data, TASK);

@@ -9,16 +9,15 @@ public class GameParityCheck {
     public static final int QUESTION_ANSWER = 2;
     public static final String TASK = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-    private static String parityCheck(int number) {
-        if (number % 2 == 0) {
-            return "yes";
+    private static boolean isEven(int number) {
+       if (number % 2 == 0) {
+            return true;
         } else {
-            return "no";
+            return false;
         }
     }
 
-    public static void gameEven() {
-        String result;
+    public static void runEven() {
         String[][] data = new String[ROUNDS_NUMBER][QUESTION_ANSWER];
 
         for (int i = 0; i < ROUNDS_NUMBER; i++) {
@@ -26,7 +25,7 @@ public class GameParityCheck {
 
             String question = Integer.toString(number);
             data[i][0] = question;
-            result = parityCheck(number);
+            String result = isEven(number) ? "yes" : "no";
             data[i][1] = result;
         }
         Engine.start(data, TASK);

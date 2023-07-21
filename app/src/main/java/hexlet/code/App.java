@@ -29,19 +29,19 @@ public class App {
                 Cli.greet();
                 break;
             case EVEN:
-                GameParityCheck.gameEven();
+                GameParityCheck.runEven();
                 break;
             case CALC:
-                Calculator.gameCalc();
+                Calculator.runCalc();
                 break;
             case GCD:
-                GreatestCommonDivisor.gcd();
+                GreatestCommonDivisor.runGcd();
                 break;
             case PROGRESSION:
-                ArithmeticProgression.progression();
+                ArithmeticProgression.runProgression();
                 break;
             case PRIME:
-                PrimeNumber.prime();
+                PrimeNumber.runPrime();
                 break;
             case EXIT:
                 System.out.println("Exit");
