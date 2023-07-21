@@ -1,7 +1,9 @@
 package hexlet.code;
+
 import java.util.Scanner;
 
 public class Engine {
+    public static final int ROUNDS_NUMBER = 3;
 
     public static void start(String[][] data, String task) {
         int counter = 0;
@@ -14,7 +16,7 @@ public class Engine {
         System.out.println("Hello, " + name + "!");
         System.out.println(task);
         do {
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < ROUNDS_NUMBER; i++) {
                 String question = data[i][0];
                 System.out.println("Question: " + question);
                 System.out.println("Your answer: " + (answer = scanner.nextLine()));
@@ -22,7 +24,7 @@ public class Engine {
 
 
                 if (!rightAnswer.equals(answer)) {
-                    System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'.");
+                    System.out.println("'" + answer + "' is wrong answer. Correct answer was '" + rightAnswer + "'.");
                     System.out.println("Let's try again, " + name + "!");
                     return;
                 } else {
@@ -30,8 +32,8 @@ public class Engine {
                     counter++;
                 }
             }
-        } while (counter < 3);
-        if (counter == 3) {
+        } while (counter < ROUNDS_NUMBER);
+        if (counter == ROUNDS_NUMBER) {
             System.out.println("Congratulations, " + name + "!");
 
         }
