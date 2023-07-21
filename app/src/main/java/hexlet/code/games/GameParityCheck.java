@@ -10,11 +10,7 @@ public class GameParityCheck {
     public static final String TASK = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     private static boolean isEven(int number) {
-        if (number % 2 == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return (number % 2 == 0);
     }
 
     public static void runEven() {
