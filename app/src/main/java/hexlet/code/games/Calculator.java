@@ -17,20 +17,16 @@ public class Calculator {
     }
 
     public static int calculate(int number1, int number2, String operator) {
-        int result = 0;
         switch (operator) {
             case "+":
-                result = number1 + number2;
-                return result;
+                return number1 + number2;
             case "-":
-                result = number1 - number2;
-                return result;
+                return number1 - number2;
             case "*":
-                result = number1 * number2;
-                return result;
+                return number1 * number2;
+            default:
+                throw new RuntimeException("There's no such operation");
         }
-        return result;
-
     }
 
     public static void runCalc() {

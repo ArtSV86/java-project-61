@@ -1,38 +1,34 @@
 package hexlet.code.games;
 
-import java.util.Arrays;
-
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class ArithmeticProgression {
     public static final int ROUNDS_NUMBER = 3;
-    public static final int PROGRESSION = 10;
+    public static final int LIMIT = 10;
     public static final int UPPER_BOUND = 10;
     public static final int QUESTION_ANSWER = 2;
     public static final String TASK = "What number is missing in the progression?";
 
     public static void runProgression() {
 
-        int[] massive = new int[PROGRESSION];
 
         String[][] data = new String[ROUNDS_NUMBER][QUESTION_ANSWER];
         for (int i = 0; i < ROUNDS_NUMBER; i++) {
-
+            String[] progression = new String[LIMIT];
             int step = Utils.generateRandomNumber(UPPER_BOUND);
-            int randomNumber = Utils.generateRandomNumber(UPPER_BOUND);
-            massive[0] = Utils.generateRandomNumber(UPPER_BOUND);
-            for (int j = 1; j < massive.length; j++) {
-                massive[j] = massive[0] + j * step;
+            int hiddenMemberIndex = Utils.generateRandomNumber(UPPER_BOUND);
+            int progressionZero = Utils.generateRandomNumber(UPPER_BOUND);
+            progression[0] = Integer.toString(progressionZero);
+            for (int j = 1; j < progression.length; j++) {
+                progression[j] = Integer.toString(progressionZero + j * step);
             }
-            String str = Arrays.toString(massive).replaceAll("\\[|]| ", "");
-            var words = str.split(",");
-            words[randomNumber] = "..";
-            String newStr = String.join(",", words);
-            String question = newStr.replace(',', ' ');
+
+            var result = progression[hiddenMemberIndex];
+            progression[hiddenMemberIndex] = "..";
+            var question = String.join(" ", progression);
             data[i][0] = question;
-            int result = massive[randomNumber];
-            data[i][1] = Integer.toString(result);
+            data[i][1] = result;
         }
         Engine.start(data, TASK);
     }
