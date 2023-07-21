@@ -35,7 +35,7 @@ public class App {
                 Calculator.gameCalc();
                 break;
             case GCD:
-                GreatestCommonDivisor.GCD();
+                GreatestCommonDivisor.gcd();
                 break;
             case PROGRESSION:
                 ArithmeticProgression.progression();

@@ -20,7 +20,7 @@ public class GreatestCommonDivisor {
         return result;
     }
 
-    public static void GCD() {
+    public static void gcd() {
         int result;
         String[][] data = new String[ROUNDS_NUMBER][QUESTION_ANSWER];
         for (int i = 0; i < ROUNDS_NUMBER; i++) {

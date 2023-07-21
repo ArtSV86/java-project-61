@@ -19,7 +19,8 @@ public class Engine {
             for (int i = 0; i < ROUNDS_NUMBER; i++) {
                 String question = data[i][0];
                 System.out.println("Question: " + question);
-                System.out.println("Your answer: " + (answer = scanner.nextLine()));
+                answer = scanner.nextLine();
+                System.out.println("Your answer: " + answer);
                 String rightAnswer = data[i][1];
 
 

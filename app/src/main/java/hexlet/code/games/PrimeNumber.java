@@ -12,11 +12,11 @@ public class PrimeNumber {
     private static String checkPrimeNumber(int number) {
         int count = 0;
         String result = null;
-        if (number > 1 && number <= 3) {
-            result = "yes";
-            return result;
-        } else if (number >= 0 && number <= 1) {
+        if (number == 0 || number == 1) {
             result = "no";
+            return result;
+        } else if (number == 2 || number == 3) {
+            result = "yes";
             return result;
         } else if (number > 3) {
             for (int i = 2; i < number; i++) {

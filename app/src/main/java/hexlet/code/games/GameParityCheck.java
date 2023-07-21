@@ -9,7 +9,7 @@ public class GameParityCheck {
     public static final int QUESTION_ANSWER = 2;
     public static final String TASK = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-    private static String ParityCheck(int number) {
+    private static String parityCheck(int number) {
         if (number % 2 == 0) {
             return "yes";
         } else {
@@ -26,7 +26,7 @@ public class GameParityCheck {
 
             String question = Integer.toString(number);
             data[i][0] = question;
-            result = ParityCheck(number);
+            result = parityCheck(number);
             data[i][1] = result;
         }
         Engine.start(data, TASK);
