@@ -28,8 +28,6 @@ public class Calculator {
             case "*":
                 result = number1 * number2;
                 return result;
-            default:
-                System.out.println("There's no such operation");
         }
         return result;
 
@@ -49,5 +47,3 @@ public class Calculator {
         Engine.start(data, TASK);
     }
 }
-
-

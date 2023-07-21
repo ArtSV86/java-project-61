@@ -37,4 +37,3 @@ public class ArithmeticProgression {
         Engine.start(data, TASK);
     }
 }
-
