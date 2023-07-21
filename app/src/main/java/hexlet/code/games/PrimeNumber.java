@@ -7,6 +7,8 @@ public class PrimeNumber {
     public static final int ROUNDS_NUMBER = 3;
     public static final int UPPER_BOUND = 100;
     public static final int QUESTION_ANSWER = 2;
+    public static final int PRIME_NUMBER_3 = 3;
+    public static final int PRIME_NUMBER_2 = 2;
     public static final String TASK = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     private static String checkPrimeNumber(int number) {
@@ -15,10 +17,10 @@ public class PrimeNumber {
         if (number == 0 || number == 1) {
             result = "no";
             return result;
-        } else if (number == 2 || number == 3) {
+        } else if (number == PRIME_NUMBER_2 || number == PRIME_NUMBER_3) {
             result = "yes";
             return result;
-        } else if (number > 3) {
+        } else if (number > PRIME_NUMBER_3) {
             for (int i = 2; i < number; i++) {
                 if (number % i == 0) {
                     count++;
